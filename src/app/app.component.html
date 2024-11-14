@@ -1,0 +1,23 @@
+<mat-drawer-container>
+  <!-- DRAWER CONTENT -->
+  <mat-drawer mode="side" opened class="drawer">
+    <div class="drawer">
+      <img src="PMS.svg" alt="PMS">
+      <div>
+        <mat-icon>speed</mat-icon>
+        <mat-icon style="color: white;">dashboard</mat-icon>
+        <mat-icon>layers</mat-icon>
+        <mat-icon>settings</mat-icon>
+        <mat-icon>notifications</mat-icon>
+      </div>
+      <mat-icon>logout</mat-icon>    
+    </div>
+    
+  </mat-drawer>
+
+  <!-- MAIN DASHBOARD -->
+  <mat-drawer-content>
+    <app-dashboard></app-dashboard>
+  </mat-drawer-content>
+
+</mat-drawer-container>

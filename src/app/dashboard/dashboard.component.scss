@@ -1,0 +1,59 @@
+.top-bar {
+  background-color: white;
+  padding: 0.5rem 3rem;
+}
+
+.top-bar h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #FF7F5C;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.top-bar > div {
+  margin: 1rem;
+}
+
+.top-bar > div > * {
+  margin: 0.25rem;
+}
+
+.top-bar .mat-icon{
+  width:45px;
+  height: 45px;
+  font-size: 45px;
+}
+
+.mat-button-toggle{
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  padding: 0 25px;
+}
+.mat-button-toggle > .mat-icon {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+h5 {
+  color: #3D5161;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+h6 {
+  color: #3D5161;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.stations-sales {
+  margin-bottom: 1rem; 
+  width: 100%;
+}

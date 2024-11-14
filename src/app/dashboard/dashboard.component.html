@@ -1,0 +1,77 @@
+<section class="top-bar" fxLayout="row">
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <span class="dot"></span>
+    <mat-icon>local_gas_station</mat-icon>
+    <h4>{{monitored_station}}/{{all_stations}}</h4>
+    <p>Monitored<br>Stations<p>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <span class="dot"></span>
+    <mat-icon>rotate_right</mat-icon>
+    <h4>{{latest_update}}s</h4>
+    <p>Latest<br>Update</p>
+  </div>
+
+  <div>
+    <mat-button-toggle-group [(ngModel)]="day">
+      <mat-button-toggle value="today">Today</mat-button-toggle>
+      <mat-button-toggle value="yesterday">Yesterday</mat-button-toggle>
+      <mat-button-toggle value="lastWeek">Last Week</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <!--DateTime Picker x2-->
+
+</section>
+
+<section style="margin: 2rem;">
+  <div fxFlex="75%">
+    <app-summry-row></app-summry-row>
+
+    <div fxLayoutAlign="end" style="margin: 1.5rem;">
+      <mat-button-toggle-group [(ngModel)]="view">
+      <mat-button-toggle value="graph"><mat-icon>bar_chart</mat-icon>Graph</mat-button-toggle>
+      <mat-button-toggle value="list"><mat-icon>list</mat-icon>List</mat-button-toggle>
+    </mat-button-toggle-group>
+    </div>
+
+    @if (view == "graph") {<app-graphs></app-graphs>}
+    @else {<app-list></app-list>}
+    
+  </div>
+
+  <div fxFlex="25%" fxLayout="column" fxLayoutAlign="center center">
+    <section style="margin: 1rem;">
+      <h5><b>Hourly Sales</b></h5>
+      <div style="margin: 2rem;">
+        <br><br><br><br>radio chart<br><br><br>
+      </div>
+    </section>
+
+    <section style="margin: 1rem;" fxLayout="column" fxLayoutAlign="center center">
+      <h5 style="margin: 1rem;"><b>Sales by Station</b></h5>
+      @for (station of stations; track station.name) {
+      <div class="stations-sales">
+        <h6 style="margin-bottom: 1rem;">
+          <span style="text-align: center;"><mat-icon>local_gas_station</mat-icon></span>
+          {{station.name}}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          @if (station.sales != 0) {
+            <span style="font-size: 24px;">{{station.sales}} m <sup>3</sup></span>
+          } @else {
+            <span style="font-size: 24px; color: gray;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NM</span>
+          }
+          
+        </h6>
+        <mat-progress-bar mode="determinate" [value]="(station.sales/150000)*100"></mat-progress-bar>
+      </div>
+      }
+    
+    </section>
+    
+  </div>
+</section>
+

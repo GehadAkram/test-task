@@ -1,0 +1,31 @@
+<section>
+  @for (i of iterations; track $index) {
+    <mat-card class="card" appearance="outlined">
+      <mat-card-header fxLayoutAlign="space-between center">
+        <img mat-card-avatar src="gas-station.svg">
+        <mat-card-title>{{station.name}}</mat-card-title>
+        <mat-card-actions>
+        <mat-icon>more_vert</mat-icon>
+        </mat-card-actions>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <mat-grid-list cols="6" rowHeight="50px">
+          <mat-grid-tile><b>Toal Sales</b></mat-grid-tile>
+          <mat-grid-tile>{{station.sales}} m<sup>3</sup></mat-grid-tile>
+          <mat-grid-tile><b>Compression State</b></mat-grid-tile>
+          <mat-grid-tile>{{station.compression}} </mat-grid-tile>
+          <mat-grid-tile><b>Max Transacsions / Hour</b></mat-grid-tile>
+          <mat-grid-tile>{{station.max_hour}}</mat-grid-tile>
+          <mat-grid-tile><b>Toal Value</b></mat-grid-tile>
+          <mat-grid-tile>{{station.value}} EGP</mat-grid-tile>
+          <mat-grid-tile><b>Total Transacsions Count</b></mat-grid-tile>
+          <mat-grid-tile>{{station.trasaction}}</mat-grid-tile>
+          <mat-grid-tile><b>Max Transacins Date-Tme</b></mat-grid-tile>
+          <mat-grid-tile>{{station.max_date}}</mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+      
+    </mat-card>
+  }
+</section>

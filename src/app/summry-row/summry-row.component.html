@@ -1,0 +1,82 @@
+<section fxLayout="row" style="margin: 1.5rem;">
+
+  <mat-card appearance="outlined" class="card" style="background: #F4DBD4;">
+    <mat-card-header>
+      <mat-card-title style="font-size: 40px;"> 
+        {{total_value}} <span style="font-size: 20px;">EGP</span>
+      </mat-card-title>
+      <mat-card-subtitle class="subtitle">
+        Total Value
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="start center"
+    [style.color]="tv_diffrence_up ? '#00CBC0' : '#FF7F5C'">
+    @if (tv_diffrence_up) {
+      <mat-icon>arrow_drop_up</mat-icon>
+    } @else {
+      <mat-icon>arrow_drop_down</mat-icon>
+    }
+      {{total_value_diffrence}}%
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card appearance="outlined" class="card">
+    <mat-card-header>
+      <mat-card-title style="font-size: 40px;"> 
+        {{total_sales}} <span style="font-size: 20px;">m<sup>3</sup></span>
+      </mat-card-title>
+      <mat-card-subtitle class="subtitle">
+        Total Sales
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="start center"
+    [style.color]="ts_diffrence_up ? '#00CBC0' : '#FF7F5C'">
+    @if (ts_diffrence_up) {
+      <mat-icon>arrow_drop_up</mat-icon>
+    } @else {
+      <mat-icon>arrow_drop_down</mat-icon>
+    }
+      {{total_sales_diffrence}} m<sup>3</sup>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card appearance="outlined" class="card">
+    <mat-card-header>
+      <mat-card-title style="font-size: 40px;"> 
+        {{avg_sales}} <span style="font-size: 20px;">m<sup>3</sup></span>
+      </mat-card-title>
+      <mat-card-subtitle class="subtitle">
+        Avg Sales
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="start center"
+    [style.color]="as_diffrence_up ? '#00CBC0' : '#FF7F5C'">
+    @if (as_diffrence_up) {
+      <mat-icon>arrow_drop_up</mat-icon>
+    } @else {
+      <mat-icon>arrow_drop_down</mat-icon>
+    }
+      {{total_sales_diffrence}} m<sup>3</sup>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card appearance="outlined" class="card" style="margin-right: 0;">
+    <mat-card-header>
+      <mat-card-title style="font-size: 40px;"> 
+        {{total_transaction_count}} <span style="font-size: 20px;">m<sup>3</sup></span>
+      </mat-card-title>
+      <mat-card-subtitle class="subtitle">
+        Total Transaction Count
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="start center"
+    [style.color]="tt_diffrence_up ? '#00CBC0' : '#FF7F5C'">
+    @if (tt_diffrence_up) {
+      <mat-icon>arrow_drop_up</mat-icon>
+    } @else {
+      <mat-icon>arrow_drop_down</mat-icon>
+    }
+      {{total_transaction_diffrence}} m<sup>3</sup>
+    </mat-card-content>
+  </mat-card>
+</section>

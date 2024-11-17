@@ -1,5 +1,5 @@
 section {
-  height: 300px;
+  height: 400px;
   overflow-y: scroll;
 }
 
@@ -10,4 +10,10 @@ section {
   padding: 1rem;
   margin: 1rem 0;
   font-family: 'Montserrat';
+}
+
+mat-card-title {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  text-transform: uppercase;
 }

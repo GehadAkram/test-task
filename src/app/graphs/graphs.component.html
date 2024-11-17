@@ -1,18 +1,48 @@
-<div class="card">
-  <h6>Station Activity Overview</h6>
+<section class="card">
+  <h6>Stations Activites Overview</h6>
   <mat-tab-group>
     <mat-tab label="Sales">
       <google-chart 
-      [data]="salesChart.dataTable" 
-      [type]="salesChart.chartType" 
+      [columns]="salesChart.columns"
+      [data]="salesChart.data" 
+      [type]="salesChart.type" 
       [options]="salesChart.options"
-      [width]="600"
-      [height]="400">
-    </google-chart>
-      </mat-tab>
+      [width]="1050"
+      [height]="375">
+      </google-chart>
+    </mat-tab>
 
-    <mat-tab label="Value"> Content 1 </mat-tab>
-    <mat-tab label="Transaction"> Content 2 </mat-tab>
-    <mat-tab label="Comprission"> Content 3 </mat-tab>
+    <mat-tab label="Value"> 
+      <google-chart 
+      [columns]="valueChart.columns"
+      [data]="valueChart.data" 
+      [type]="valueChart.type" 
+      [options]="valueChart.options"
+      [width]="1050"
+      [height]="375">
+      </google-chart>
+    </mat-tab>
+
+    <mat-tab label="Transaction"> 
+      <google-chart 
+      [columns]="transChart.columns"
+      [data]="transChart.data" 
+      [type]="transChart.type" 
+      [options]="transChart.options"
+      [width]="1050"
+      [height]="375">
+      </google-chart>
+    </mat-tab>
+    
+    <mat-tab label="Comprission"> 
+      <google-chart 
+      [columns]="commChart.columns"
+      [data]="commChart.data" 
+      [type]="commChart.type" 
+      [options]="commChart.options"
+      [width]="1050"
+      [height]="375">
+      </google-chart>
+    </mat-tab>
   </mat-tab-group>
-</div>
+</section>

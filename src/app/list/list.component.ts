@@ -6,10 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
+  showTotalSales = true;
+  showCompressionState = true;
+  showMaxTransactions = true;
+  showTotalValue = true;
+  showTransactionsCount = true;
+  showMaxTransactionsDateTime = true;
+
   iterations = Array(5);
 
   station = {
-    name: "Staion A",
+    name: "Station A",
     sales: 62721,
     value: 550,
     trasaction: 5161,

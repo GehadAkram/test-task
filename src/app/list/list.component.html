@@ -4,25 +4,65 @@
       <mat-card-header fxLayoutAlign="space-between center">
         <img mat-card-avatar src="gas-station.svg">
         <mat-card-title>{{station.name}}</mat-card-title>
+        <div fxFlex="auto"></div>
+
         <mat-card-actions>
-        <mat-icon>more_vert</mat-icon>
+          <button mat-icon-button [matMenuTriggerFor]="menu" style="background-color: white; border: none;">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <p style="padding: 0.75rem;">View Properties</p>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showTotalSales">Total Sales</mat-checkbox>
+            </button>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showTotalValue">Total Value</mat-checkbox>
+            </button>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showCompressionState">Compression State</mat-checkbox>
+            </button>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showTransactionsCount">Total Transactions Count</mat-checkbox>
+            </button>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showMaxTransactions">Max Transactions / Hour</mat-checkbox>
+            </button>
+            <button mat-menu-item>
+              <mat-checkbox [(ngModel)]="showMaxTransactionsDateTime">Max Transactions Date-Time</mat-checkbox>
+            </button>
+          </mat-menu>
         </mat-card-actions>
+
       </mat-card-header>
       
       <mat-card-content>
+        <mat-divider style="margin: 0.5rem;"></mat-divider>
         <mat-grid-list cols="6" rowHeight="50px">
+          @if (showTotalSales) {
           <mat-grid-tile><b>Toal Sales</b></mat-grid-tile>
           <mat-grid-tile>{{station.sales}} m<sup>3</sup></mat-grid-tile>
+          }
+          @if (showCompressionState) {
           <mat-grid-tile><b>Compression State</b></mat-grid-tile>
           <mat-grid-tile>{{station.compression}} </mat-grid-tile>
+          }
+          @if (showMaxTransactions) {
           <mat-grid-tile><b>Max Transacsions / Hour</b></mat-grid-tile>
           <mat-grid-tile>{{station.max_hour}}</mat-grid-tile>
+          }
+          @if (showTotalValue) {
           <mat-grid-tile><b>Toal Value</b></mat-grid-tile>
           <mat-grid-tile>{{station.value}} EGP</mat-grid-tile>
+          }
+          @if (showTransactionsCount) {
           <mat-grid-tile><b>Total Transacsions Count</b></mat-grid-tile>
           <mat-grid-tile>{{station.trasaction}}</mat-grid-tile>
+          }
+          @if (showMaxTransactionsDateTime) {
           <mat-grid-tile><b>Max Transacins Date-Tme</b></mat-grid-tile>
           <mat-grid-tile>{{station.max_date}}</mat-grid-tile>
+          }
         </mat-grid-list>
       </mat-card-content>
       

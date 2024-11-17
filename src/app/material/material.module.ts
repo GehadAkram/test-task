@@ -9,6 +9,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 const materials = [
@@ -20,7 +25,13 @@ const materials = [
   MatCardModule,
   MatProgressBarModule,
   MatGridListModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDividerModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatInputModule,
+
 ]
 
 @NgModule({

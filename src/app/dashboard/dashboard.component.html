@@ -22,7 +22,25 @@
     </mat-button-toggle-group>
   </div>
 
-  <!--DateTime Picker x2-->
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-icon class="icon">play_arrow</mat-icon>
+    <mat-form-field>
+      <mat-label> Start date-time</mat-label>
+      <input matInput [matDatepicker]="picker1">
+      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-icon class="icon">stop</mat-icon>
+    <mat-form-field>
+      <mat-label> End date-time</mat-label>
+      <input matInput [matDatepicker]="picker2">
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+  
 
 </section>
 
@@ -37,12 +55,12 @@
     </mat-button-toggle-group>
     </div>
 
-    @if (view == "graph") {<app-graphs></app-graphs>}
-    @else {<app-list></app-list>}
+    @if (view == "list") {<app-list></app-list>}
+    @else {<app-graphs></app-graphs>}
     
   </div>
 
-  <div fxFlex="25%" fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex="25%" fxLayout="column" fxLayoutAlign="start center">
     <section style="margin: 1rem;">
       <h5><b>Hourly Sales</b></h5>
       <div style="margin: 2rem;">

@@ -1,6 +1,7 @@
 # TestTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This project is an implementation of the design found [here](https://xd.adobe.com/view/372228fd-9afe-4a10-b251-af977b41e290-6271/screen/319f4e6b-6d4e-4d66-9bad-86566b8df9bf/).
 
 ## Development server
 
